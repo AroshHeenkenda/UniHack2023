@@ -41,3 +41,16 @@ timer_ref.innerHTML = `
 
     </div>
 `;
+
+//test pop up
+// Get the modal
+var modal = document.getElementById("popUp");
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
