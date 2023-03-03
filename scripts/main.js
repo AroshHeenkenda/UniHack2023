@@ -1,10 +1,3 @@
-// Start with an initial value of 20 seconds
-const TIME_LIMIT = 20;
-
-// Initially, no time has passed, but this will count up
-// and subtract from the TIME_LIMIT
-let timePassed = 0;
-let timeLeft = TIME_LIMIT;
 
 
 //Timer Function
@@ -24,7 +17,32 @@ function formatTimeLeft(time) {
     return `${minutes}:${seconds}`;
 }
 
+
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    
+    // The amount of time passed increments by one
+    if (timeLeft > 0){
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+    }
+
+    // The time left label is updated
+    document.getElementById("timer-label").innerHTML = formatTimeLeft(timeLeft);
+  }, 1000);
+}
+
+
+//On load
+// Start with an initial value of 20 seconds
+const TIME_LIMIT = 5;
+// Initially, no time has passed, but this will count up
+// and subtract from the TIME_LIMIT
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
 let timer_ref = document.getElementById("timer_div");
+let timerInterval = null;
 timer_ref.innerHTML = `
     <div class="timer">
 
@@ -41,3 +59,4 @@ timer_ref.innerHTML = `
 
     </div>
 `;
+startTimer();
