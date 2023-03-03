@@ -26,6 +26,18 @@ function startTimer() {
 }
 
 
+function pauseTimer() {
+
+    if (PAUSED){
+        PAUSED = false;
+        startTimer();
+    }
+    else{
+        PAUSED = true;
+        clearInterval(timerInterval);
+    }
+}
+
 //On load
 // Start with an initial value of 20 seconds
 const TIME_LIMIT = 3660;
@@ -35,6 +47,8 @@ let timePassed = 0;
 let timeLeft = TIME_LIMIT;
 let timer_ref = document.getElementById("timer_div");
 let timerInterval = null;
+let PAUSED = false;
+
 timer_ref.innerHTML = `
     <div class="timer">
 
@@ -45,10 +59,12 @@ timer_ref.innerHTML = `
             </g>
 
         </svg>
-        <span id="timer-label" class="timer_label">
+        <span id="timer-label" class="timer_label" onclick="pauseTimer()">
             ${formatTimeLeft(timeLeft)}
         </span>
 
     </div>
 `;
+
+
 startTimer();
