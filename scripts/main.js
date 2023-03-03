@@ -2,19 +2,20 @@
 
 //Timer Function
 function formatTimeLeft(time) {
-    // The largest round integer less than or equal to the result of time divided being by 60.
-    const minutes = Math.floor(time / 60);
+
+    let minutes = Math.floor(time / 60); // The largest round integer less than or equal to the result of time divided being by 60.
+    let hours = Math.floor(time / 3600); //Will be largest round integer divided by 3600
+    let seconds = time % 60; // Seconds are the remainder of the time divided by 60 (modulus operator)
     
-    // Seconds are the remainder of the time divided by 60 (modulus operator)
-    let seconds = time % 60;
+    // If the values for each is less than 10, then display with a leading zero
+    if (seconds < 10) {seconds = `0${seconds}`;}
+    if (minutes < 10) {minutes = `0${minutes}`;}
+    if (hours < 10) {hours = `0${hours}`;}
     
-    // If the value of seconds is less than 10, then display seconds with a leading zero
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
-  
+    console.log(`${hours}:${minutes}:${seconds}`);
+
     // The output in MM:SS format
-    return `${minutes}:${seconds}`;
+    return `${hours}:${minutes}:${seconds}`;
 }
 
 
@@ -36,7 +37,7 @@ function startTimer() {
 
 //On load
 // Start with an initial value of 20 seconds
-const TIME_LIMIT = 5;
+const TIME_LIMIT = 61;
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
 let timePassed = 0;
