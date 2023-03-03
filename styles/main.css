@@ -34,11 +34,7 @@ li {
     color: #fff;    
 }
     
-/* LOGO */
-.logo {
-    font-size: 32px;
-}
-    
+
 /* NAVBAR MENU */
 .menu {
     display: flex;
@@ -55,9 +51,9 @@ li {
 .menu li {
     padding: 5px 14px;
 }
-    
+
+
 /* DROPDOWN MENU */
-    
 .services {
     position: relative; 
 }
