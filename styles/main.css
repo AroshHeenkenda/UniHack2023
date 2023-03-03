@@ -84,3 +84,24 @@ li {
 .services:hover .dropdown {
     display: block;
 }
+
+
+/* TIMER */
+/* Sets the containers height and width */
+.timer {
+    position: relative;
+    height: 300px;
+    width: 300px;
+}
+  
+/* Removes SVG styling that would hide the time label */
+.timer_circle {
+    fill: none;
+    stroke: none;
+}
+  
+/* The SVG path that displays the timer's progress */
+.timer_path-elapsed {
+    stroke-width: 7px;
+    stroke: grey;
+}
