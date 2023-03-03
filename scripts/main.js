@@ -12,7 +12,8 @@ function formatTimeLeft(time) {
 
 
 function startTimer() {
-  timerInterval = setInterval(() => {
+
+    timerInterval = setInterval(() => {
     
     // The amount of time passed increments by one
     if (timeLeft > 0){
@@ -23,6 +24,9 @@ function startTimer() {
     // The time left label is updated
     document.getElementById("timer-label").innerHTML = formatTimeLeft(timeLeft);
   }, 1000);
+
+  if (timeLeft < 0){ clearInterval(timerInterval);}
+  return
 }
 
 
@@ -40,7 +44,7 @@ function pauseTimer() {
 
 //On load
 // Start with an initial value of 20 seconds
-const TIME_LIMIT = 3660;
+const TIME_LIMIT = 10;
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
 let timePassed = 0;
