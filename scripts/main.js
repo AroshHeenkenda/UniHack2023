@@ -1,43 +1,71 @@
-// Start with an initial value of 20 seconds
-const TIME_LIMIT = 20;
-
-// Initially, no time has passed, but this will count up
-// and subtract from the TIME_LIMIT
-let timePassed = 0;
-let timeLeft = TIME_LIMIT;
 
 
 //Timer Function
 function formatTimeLeft(time) {
-    // The largest round integer less than or equal to the result of time divided being by 60.
-    const minutes = Math.floor(time / 60);
-    
-    // Seconds are the remainder of the time divided by 60 (modulus operator)
-    let seconds = time % 60;
-    
-    // If the value of seconds is less than 10, then display seconds with a leading zero
-    if (seconds < 10) {
-      seconds = `0${seconds}`;
-    }
-  
-    // The output in MM:SS format
-    return `${minutes}:${seconds}`;
+
+    const date_time = new Date(time * 1000).toISOString().slice(11,19);
+
+    // The output in HH:MM:SS format
+    return date_time;
 }
 
-let timer_ref = document.getElementById("timer_div");
+
+
+function startTimer() {
+
+    timerInterval = setInterval(() => {
+    
+    // The amount of time passed increments by one
+    if (timeLeft > 0){
+        timePassed = timePassed += 1;
+        timeLeft = TIME_LIMIT - timePassed;
+    }
+
+    // The time left label is updated
+    document.getElementById("timer-label").innerHTML = formatTimeLeft(timeLeft);
+  }, 1000);
+
+  if (timeLeft < 0){ clearInterval(timerInterval);}
+  return
+}
+
+
+function pauseTimer() {
+
+    let pause_ref = document.getElementById("pause_button");
+
+    if (PAUSED){
+        PAUSED = false;
+        startTimer();
+        pause_ref.classList.remove("paused");
+    }
+    else{
+        PAUSED = true;
+        clearInterval(timerInterval);
+        pause_ref.classList.add("paused");
+    }
+}
+
+//On load
+// Start with an initial value of 20 seconds
+const TIME_LIMIT = 10;
+// Initially, no time has passed, but this will count up
+// and subtract from the TIME_LIMIT
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
+let timer_ref = document.getElementById("timer");
+let timerInterval = null;
+let PAUSED = true;
+document.getElementById("pause_button").classList.add("paused");
+
 timer_ref.innerHTML = `
-    <div class="timer">
-
-        <svg class="timer_svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-            <g class="timer_circle">
+    <svg class="timer_svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g class="timer_circle">
             <circle class="timer_path-elapsed" cx="50" cy="50" r="45" />
-            </g>
+        </g>
+    </svg>
 
-        </svg>
-        <span id="timer-label" class="timer_label">
-            ${formatTimeLeft(timeLeft)}
-        </span>
-
-    </div>
-`;
+    <span id="timer-label" class="timer_label">
+        ${formatTimeLeft(timeLeft)}
+    </span>
+    `;
