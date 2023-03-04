@@ -161,36 +161,43 @@ li {
   
 .modal{
     display: none;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     overflow: auto;
-    background-color: #fff;
+    background-image: linear-gradient(rgb(1, 139, 139), blue);
     background-color: rgba(0,0,0,0.4);
 }
 
 .modal-content{
     background-color: #fefefe;
+    border-radius: 25px;
     margin: auto;
-    padding: 20px;
+    padding: 10px;
     border: 1px solid #888;
-    width: 80%;
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+    width: 50vw;
+    height: auto;
 }
 
 /* Pop up title */
 .modal-header{
     padding: 20px;
     text-align: center;
+}
+
+/*pop up continue button*/
+.popUp-continue-btn{
+    background-color: rgb(1, 139, 139); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
 }
