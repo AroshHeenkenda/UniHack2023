@@ -11,7 +11,8 @@ btn.onclick = function() {
   getExercises()
   let item = localStorage.getItem("exercise");
   let exe = JSON.parse(item)
-  document.getElementById("exercise").innerHTML = `Name:${exe[0].name} <br> Type: ${exe[0].type} <br> Instruction: ${exe[0].instructions} <br> equipment: ${exe[0].equipment} <br> difficulty: ${exe[0].difficulty}`;
+  let rand = getRandomInt(10)
+  document.getElementById("exercise").innerHTML = `Name:${exe[rand].name} <br> Type: ${exe[rand].type} <br> Instruction: ${exe[rand].instructions} <br> equipment: ${exe[rand].equipment} <br> difficulty: ${exe[rand].difficulty}`;
 }
 
 function getExercises(){
@@ -30,4 +31,8 @@ function getExercises(){
         }
     });
 }
+
+function getRandomInt(max) {
+    return Math.floor(Math.random() * max);
+  }
 
