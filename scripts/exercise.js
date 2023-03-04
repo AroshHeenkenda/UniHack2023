@@ -55,6 +55,8 @@ function getWeather(){
 var weatherBtn = document.getElementById("weatherBtn");
 // Get the modal
 var weatherModal = document.getElementById("weatherPopUp");
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
 weatherBtn.onclick = function() {
   weatherModal.style.display = "block";
@@ -73,4 +75,9 @@ weatherBtn.onclick = function() {
 
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'tomorrow-sdk');
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  weatherModal.style.display = "none";
 }
