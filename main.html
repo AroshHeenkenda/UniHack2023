@@ -34,7 +34,9 @@
 
         <button class="pause_button" id="pause_button"  onclick="pauseTimer()"></button>
 
-    </div>
+        <button class="reset_timer" id="reset_timer" onclick="resetTimer()"> Reset Timer </button>
+
+     </div>
 
     </div>
     <!-- Trigger/Open The Modal -->
@@ -51,14 +53,26 @@
             <p id="exercise">some text</p>
             <iframe src="https://giphy.com/embed/ugTcpVtsc3gVa" id="giphy-embed" allowFullScreen></iframe>
         </div>
-    </div>
-  </body>
-  <!-- Links to JS -->
-  <script src="scripts/main.js"></script>
-  <script src="scripts/exercise.js"></script>
-  <!--jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-  <script src="scripts/exercise.js"></script>
-  <!--jQuery-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+        <!-- Reset Timer Modal -->
+        <div id="resetTimerModal" class="resetTimerModal">
+
+            <div class="resetTimerModalContent">
+                <span class="resetTimerClose">&times;</span>
+                <p>Some text in the Modal..</p>
+            </div>
+
+        </div>
+        
+    </body>
+
+    <!-- Links to JS -->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/exercise.js"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="scripts/exercise.js"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
 </html>
