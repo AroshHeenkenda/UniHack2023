@@ -29,7 +29,7 @@ con.onclick =function closePopUp() {
     modal.style.display = "none";
 }
 
-
+//fetch stretch exercise from database
 function getExercises(dbName = 'scripts/stretchingPosture.json'){
   fetch(dbName)
   .then(response => response.json())
@@ -41,12 +41,12 @@ function getExercises(dbName = 'scripts/stretchingPosture.json'){
   });
 }
 
-
+//random number from 0-8 to randomly sugeest stretch posture
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-
+//fetch weather detail from open meteo api
 function getWeather(){
     let url = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,precipitation,rain&daily=precipitation_sum,precipitation_probability_max&current_weather=true&timezone=Australia%2FSydney'
     fetch(url)
@@ -54,6 +54,7 @@ function getWeather(){
     .then((data) => console.log(data));
 }
 
+//function to create weather widge
 (function(d, s, id) {
     if (d.getElementById(id)) {
         if (window.__TOMORROW__) {
