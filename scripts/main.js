@@ -62,10 +62,12 @@ timer_ref.innerHTML = `
     <svg class="timer_svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <g class="timer_circle">
             <circle class="timer_path-elapsed" cx="50" cy="50" r="45" />
-        </g>
-    </svg>
+            </g>
 
-    <span id="timer-label" class="timer_label">
-        ${formatTimeLeft(timeLeft)}
-    </span>
-    `;
+        </svg>
+        <span id="timer-label" class="timer_label">
+            ${formatTimeLeft(timeLeft)}
+        </span>
+
+    </div>
+`;
