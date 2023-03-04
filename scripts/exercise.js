@@ -21,6 +21,10 @@ btn.onclick = function() {
   document.getElementById("giphy-embed").src = gif.data[0].embed_url
   //console.log(gif.data[0].embed_url)
 }
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
 function getExercises(){
     var type = 'stretching'
@@ -53,6 +57,6 @@ function getWeather(){
 function getGIF(searchKey){
     let url = 'http://api.giphy.com/v1/gifs/search'
     let api_key = 'MA7E8FdOXw3t2WTIbZzew06umA59Y8kT'
-    let xhr = $.get(url+'?q='+searchKey+'&api_key='+api_key+'&limit=5')
+    let xhr = $.get(url+'?q='+searchKey+'stretching'+'&api_key='+api_key+'&limit=5')
     xhr.done(function(data) { localStorage.setItem("gifdata",JSON.stringify(data)); })
 }
