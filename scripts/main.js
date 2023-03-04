@@ -66,10 +66,20 @@ function closeResetTimer(){
     reset_ref.classList.remove("show");
 }
 
+function confirmResetTimer(){
+
+    let hour = document.getElementById("hour").value;
+    let minute = document.getElementById("minute").value;
+    let second = document.getElementById("second").value;
+
+    TIME_LIMIT = (hour*60*60) + (minute*60) + (second);
+    formatTimeLeft(TIME_LIMIT);
+    closeResetTimer();
+}
 
 //On load
 // Start with an initial value of 20 seconds
-const TIME_LIMIT = 10;
+let TIME_LIMIT = 10;
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
 let timePassed = 0;
