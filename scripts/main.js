@@ -46,6 +46,13 @@ function pauseTimer() {
     }
 }
 
+
+function resetTimer() {
+
+    
+}
+
+
 //On load
 // Start with an initial value of 20 seconds
 const TIME_LIMIT = 10;

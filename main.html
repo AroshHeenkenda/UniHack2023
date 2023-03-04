@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
-
-    <!-- Head -->
     <head>
-        
         <!-- Meta tags -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Links to CSS -->
@@ -11,15 +8,12 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
         <!-- Title -->
         <title>UniHack2023</title>
-
     </head>
 
-    <!-- Body -->
     <body>
-
         <!-- Nav Bar -->
         <nav class="navbar">
-            
+                
             <!-- NAVIGATION MENU -->
             <ul class="nav-links">
             
@@ -31,7 +25,7 @@
             </ul> 
 
         </nav>
-    
+
         <!-- Other elements of the body -->
         <div id="timer_div">
 
@@ -41,25 +35,39 @@
 
             <button class="pause_button" id="pause_button"  onclick="pauseTimer()"></button>
 
+            <button class="reset_timer" id="reset_timer" onclick="resetTimer()"> Reset Timer </button>
+
         </div>
 
         </div>
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn">Open Modal</button>
-        <!--Pop up-->
-        <div id = "popUp" class = "modal">
-            <!--Pop up content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 style="font-family: Bebas Neue, latin-ext; font-size: 38px; background:rgb(1, 139, 139)">Time to stretch</h2>
+            <!-- Trigger/Open The Modal -->
+            <button id="myBtn">Open Modal</button>
+            <!--Pop up-->
+                <div id = "popUp" class = "modal">
+                <!--Pop up content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 style="font-family: Bebas Neue, latin-ext; font-size: 38px; background:rgb(1, 139, 139)">Time to stretch</h2>
                 </div>
                 <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2022/02/22/15/36/wf619106-1-calf-stretch-468x263.jpg" id="pic" width="70%" height="70%" alt="" style=" display: block;margin-left: auto;margin-right: auto;"></img>
-                <h2 id="name" style="font-family: Bebas Neue, latin-ext; font-size: 38px;">some text</h2>
+                    <h2 id="name" style="font-family: Bebas Neue, latin-ext; font-size: 38px;">some text</h2>
                 <p id="description" style="font: caption;"> some text</p>
                 <div style="text-align: right;">
                     <button class="popUp-continue-btn" id="closeStretch">Continue</button>
+                    </div>
+                        
                 </div>
-                
+            
+            </div>
+
+            <!-- Reset Timer Modal -->
+            <div id="resetTimerModal" class="resetTimerModal">
+
+                <div class="resetTimerModalContent">
+                    <span class="resetTimerClose">&times;</span>
+                    <p>Some text in the Modal..</p>
+                </div>
+
             </div>
         </div>
         <!--Weather widge from tomorrow-->

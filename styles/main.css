@@ -158,7 +158,11 @@ li {
 
     justify-content: center;
 }
-  
+
+
+
+/* GIF MODAL */
+
 .modal{
     display: none;
     position: absolute;
@@ -177,16 +181,115 @@ li {
     background-color: #fefefe;
     border-radius: 25px;
     margin: auto;
-    padding: 10px;
+    padding: 20px;
     border: 1px solid #888;
-    width: 50vw;
-    height: auto;
+    width: 80%;
 }
 
-/* Pop up title */
-.modal-header{
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.resetTimerClose:hover,
+.resetTimerClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* RESET TIMER MODAL */
+.resetTimerModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content/Box */
+.resetTimerModalContent {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+  
+/* The Close Button */
+.resetTimerClose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.resetTimerClose:hover,
+.resetTimerClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/*pop up continue button*/
+.popUp-continue-btn{
+    background-color: rgb(1, 139, 139); 
+    border: none;
+    color: white;
+    padding: 15px 32px;
     text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 25px;
+}
+
+
+/* RESET TIMER MODAL */
+.resetTimerModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+/* Modal Content/Box */
+.resetTimerModalContent {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+  
+/* The Close Button */
+.resetTimerClose {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.resetTimerClose:hover,
+.resetTimerClose:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 /*pop up continue button*/
