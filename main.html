@@ -1,72 +1,64 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <!-- Meta tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Links to CSS -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- Title -->
+    <title>UniHack2023</title>
 
-    <!-- Head -->
-    <head>
+  </head>
+  <body>
+    <!-- Nav Bar -->
+    <nav class="navbar">
+            
+        <!-- NAVIGATION MENU -->
+        <ul class="nav-links">
         
-        <!-- Meta tags -->
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- Links to CSS -->
-        <link rel="stylesheet" href="styles/main.css">
-        <!-- Title -->
-        <title>UniHack2023</title>
+            <!-- NAVIGATION MENUS -->
+            <div class="menu">
+                <li><a href="main.html">Home</a></li>            
+            </div>
 
-    </head>
+        </ul> 
 
-    <!-- Body -->
-    <body>
+    </nav>
 
-        <!-- Nav Bar -->
-        <nav class="navbar">
-            
-            <!-- NAVIGATION MENU -->
-            <ul class="nav-links">
-            
-                <!-- NAVIGATION MENUS -->
-                <div class="menu">
-                    <li><a href="main.html">Home</a></li>            
-                </div>
+    <!-- Other elements of the body -->
+    <div id="timer_div">
 
-            </ul> 
+        <div class="timer" id="timer">
 
-        </nav>
+        </div>
+
+        <button class="pause_button" id="pause_button"  onclick="pauseTimer()"></button>
+
+    </div>
+
+    </div>
+    <!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+    <!--Pop up-->
     
-        <!-- Other elements of the body -->
-        <div id="timer_div">
-
-            <div class="timer" id="timer">
-
+    <div id = "popUp" class = "modal">
+        <!--Pop up content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Time to stretch</h2>
             </div>
-
-            <button class="pause_button" id="pause_button"  onclick="pauseTimer()"></button>
-
+            <p id="exercise">some text</p>
+            <iframe src="https://giphy.com/embed/ugTcpVtsc3gVa" id="giphy-embed" allowFullScreen></iframe>
         </div>
-
-        </div>
-        <!-- Trigger/Open The Modal -->
-        <button id="myBtn">Open Modal</button>
-        <!--Pop up-->
-        
-        <div id = "popUp" class = "modal">
-            <!--Pop up content-->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">&times;</span>
-                    <h2>Time to stretch</h2>
-                </div>
-                <p id="exercise">some text</p>
-                <iframe src="https://giphy.com/embed/ugTcpVtsc3gVa" id="giphy-embed" allowFullScreen></iframe>
-            </div>
-        </div>
-    </body>
-
-    <!-- Links to JS -->
-    <script src="scripts/main.js"></script>
-    <script src="scripts/exercise.js"></script>
-    <!--jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="scripts/exercise.js"></script>
-    <!--jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-
+    </div>
+  </body>
+  <!-- Links to JS -->
+  <script src="scripts/main.js"></script>
+  <script src="scripts/exercise.js"></script>
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script src="scripts/exercise.js"></script>
+  <!--jQuery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 </html>
