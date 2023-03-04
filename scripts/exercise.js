@@ -9,6 +9,8 @@ var btn = document.getElementById("myBtn");
 btn.onclick = function() {
   modal.style.display = "block";
   getExercises()
+  getWeather()
+  console.log(getWeather())
   let item = localStorage.getItem("exercise");
   let exe = JSON.parse(item)
   let rand = getRandomInt(10)
@@ -35,4 +37,6 @@ function getExercises(){
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
+
+function getWeather()
 
