@@ -9,10 +9,17 @@ var btn = document.getElementById("myBtn");
 btn.onclick = function() {
   modal.style.display = "block";
   getExercises()
+  
   let item = localStorage.getItem("exercise");
   let exe = JSON.parse(item)
   let rand = getRandomInt(10)
+  getGIF((exe[rand].name).replace(" ","+"))
+  let gifData = localStorage.getItem("gifdata")
+  let gif = JSON.parse(gifData)
+  //console.log(gif.data[0].url)
   document.getElementById("exercise").innerHTML = `Name:${exe[rand].name} <br> Type: ${exe[rand].type} <br> Instruction: ${exe[rand].instructions} <br> equipment: ${exe[rand].equipment} <br> difficulty: ${exe[rand].difficulty}`;
+  document.getElementById("giphy-embed").src = gif.data[0].embed_url
+  //console.log(gif.data[0].embed_url)
 }
 
 function getExercises(){
@@ -43,3 +50,9 @@ function getWeather(){
     .then((data) => console.log(data));
 }
 
+function getGIF(searchKey){
+    let url = 'http://api.giphy.com/v1/gifs/search'
+    let api_key = 'MA7E8FdOXw3t2WTIbZzew06umA59Y8kT'
+    let xhr = $.get(url+'?q='+searchKey+'&api_key='+api_key+'&limit=5')
+    xhr.done(function(data) { localStorage.setItem("gifdata",JSON.stringify(data)); })
+}
