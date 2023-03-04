@@ -32,13 +32,17 @@ function startTimer() {
 
 function pauseTimer() {
 
+    let pause_ref = document.getElementById("pause_button");
+
     if (PAUSED){
         PAUSED = false;
         startTimer();
+        pause_ref.classList.remove("paused");
     }
     else{
         PAUSED = true;
         clearInterval(timerInterval);
+        pause_ref.classList.add("paused");
     }
 }
 
@@ -49,26 +53,19 @@ const TIME_LIMIT = 10;
 // and subtract from the TIME_LIMIT
 let timePassed = 0;
 let timeLeft = TIME_LIMIT;
-let timer_ref = document.getElementById("timer_div");
+let timer_ref = document.getElementById("timer");
 let timerInterval = null;
-let PAUSED = false;
+let PAUSED = true;
+document.getElementById("pause_button").classList.add("paused");
 
 timer_ref.innerHTML = `
-    <div class="timer">
-
-        <svg class="timer_svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-
-            <g class="timer_circle">
+    <svg class="timer_svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+        <g class="timer_circle">
             <circle class="timer_path-elapsed" cx="50" cy="50" r="45" />
-            </g>
+        </g>
+    </svg>
 
-        </svg>
-        <span id="timer-label" class="timer_label" onclick="pauseTimer()">
-            ${formatTimeLeft(timeLeft)}
-        </span>
-
-    </div>
-`;
-
-
-startTimer();
+    <span id="timer-label" class="timer_label">
+        ${formatTimeLeft(timeLeft)}
+    </span>
+    `;
