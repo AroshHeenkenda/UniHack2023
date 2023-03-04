@@ -158,7 +158,11 @@ li {
 
     justify-content: center;
 }
-  
+
+
+
+/* GIF MODAL */
+
 .modal{
     display: none;
     position: fixed;
@@ -194,3 +198,6 @@ li {
     padding: 20px;
     text-align: center;
 }
+
+
+/* RESET TIMER MODAL */
