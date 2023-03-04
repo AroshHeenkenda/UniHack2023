@@ -154,3 +154,9 @@ li {
     font-size: 28px;
     font-weight: bold;
 }
+
+/* Pop up title */
+.modal-header{
+    padding: 20px;
+    text-align: center;
+}
