@@ -304,3 +304,26 @@ li {
     font-size: 16px;
     border-radius: 25px;
 }
+
+.weatherModal{
+    display: none;
+    position: absolute;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: auto;
+    background-image: linear-gradient(rgb(1, 139, 139), blue);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.weather-modal-content{
+    background-color: #fefefe;
+    border-radius: 25px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}

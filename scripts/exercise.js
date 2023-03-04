@@ -1,15 +1,11 @@
 //test pop up
+/*-------exercise suggestion pop up-------*/ 
 // Get the modal
 var modal = document.getElementById("popUp");
-
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
-
 //Get the button that close the modal
 var con = document.getElementById("closeStretch")
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
@@ -54,8 +50,16 @@ function getWeather(){
     .then((data) => console.log(data));
 }
 
-//function to create weather widge
-(function(d, s, id) {
+/*-----------Weather pop up--------------------*/
+//Get button that opens the weather pop up
+var weatherBtn = document.getElementById("weatherBtn");
+// Get the modal
+var weatherModal = document.getElementById("weatherPopUp");
+// When the user clicks on the button, open the modal
+weatherBtn.onclick = function() {
+  weatherModal.style.display = "block";
+  //function to create weather widge
+  (function(d, s, id) {
     if (d.getElementById(id)) {
         if (window.__TOMORROW__) {
             window.__TOMORROW__.renderWidget();
@@ -68,4 +72,5 @@ function getWeather(){
     js.src = "https://www.tomorrow.io/v1/widget/sdk/sdk.bundle.min.js";
 
     fjs.parentNode.insertBefore(js, fjs);
-})(document, 'script', 'tomorrow-sdk');
+  })(document, 'script', 'tomorrow-sdk');
+}
