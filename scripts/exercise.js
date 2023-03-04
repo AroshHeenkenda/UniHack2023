@@ -9,8 +9,6 @@ var btn = document.getElementById("myBtn");
 btn.onclick = function() {
   modal.style.display = "block";
   getExercises()
-  getWeather()
-  console.log(getWeather())
   let item = localStorage.getItem("exercise");
   let exe = JSON.parse(item)
   let rand = getRandomInt(10)
@@ -38,5 +36,10 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
   }
 
-function getWeather()
+function getWeather(){
+    let url = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&current_weather=true'
+    fetch(url)
+    .then((response) => response.json())
+    .then((data) => console.log(data));
+}
 
