@@ -49,7 +49,15 @@ function pauseTimer() {
 
 function resetTimer() {
 
+    let reset_ref = document.getElementById("resetTimerModal");
+    reset_ref.classList.add("show");
     
+}
+
+function closeResetTimer(){
+
+    let reset_ref = document.getElementById("resetTimerModal");
+    reset_ref.classList.remove("show");
 }
 
 
