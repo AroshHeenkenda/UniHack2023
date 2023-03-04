@@ -5,6 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Links to CSS -->
         <link rel="stylesheet" href="styles/main.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Bebas Neue">
         <!-- Title -->
         <title>UniHack2023</title>
     </head>
@@ -42,16 +43,19 @@
             <!-- Trigger/Open The Modal -->
             <button id="myBtn">Open Modal</button>
             <!--Pop up-->
-            
-            <div id = "popUp" class = "modal">
+                <div id = "popUp" class = "modal">
                 <!--Pop up content-->
                 <div class="modal-content">
                     <div class="modal-header">
-                        <span class="close">&times;</span>
-                        <h2>Time to stretch</h2>
+                        <h2 style="font-family: Bebas Neue, latin-ext; font-size: 38px; background:rgb(1, 139, 139)">Time to stretch</h2>
+                </div>
+                <img src="https://www.mayoclinic.org/-/media/kcms/gbs/patient-consumer/images/2022/02/22/15/36/wf619106-1-calf-stretch-468x263.jpg" id="pic" width="70%" height="70%" alt="" style=" display: block;margin-left: auto;margin-right: auto;"></img>
+                    <h2 id="name" style="font-family: Bebas Neue, latin-ext; font-size: 38px;">some text</h2>
+                <p id="description" style="font: caption;"> some text</p>
+                <div style="text-align: right;">
+                    <button class="popUp-continue-btn" id="closeStretch">Continue</button>
                     </div>
-                    <p id="exercise">some text</p>
-                    <iframe src="https://giphy.com/embed/ugTcpVtsc3gVa" id="giphy-embed" allowFullScreen></iframe>
+                        
                 </div>
             
             </div>
@@ -66,7 +70,31 @@
 
             </div>
         </div>
+        <!--Weather widge from tomorrow-->
         
+        <div class="tomorrow"
+           data-location-id=""
+           data-language="EN"
+           data-unit-system="METRIC"
+           data-skin="light"
+           data-widget-type="summary"
+           style="padding-bottom:22px;position:relative;width: 50%;"
+        >
+          <a
+            href="https://www.tomorrow.io/weather-api/"
+            rel="nofollow noopener noreferrer"
+            target="_blank"
+            style="position: absolute; bottom: 0; transform: translateX(-50%); left: 50%;"
+          >
+            <img
+              alt="Powered by the Tomorrow.io Weather API"
+              src="https://weather-website-client.tomorrow.io/img/powered-by.svg"
+              width="100"
+              height="18"
+            />
+          </a>
+        </div>
+
     </body>
 
     <!-- Links to JS -->
@@ -75,7 +103,5 @@
     <!--jQuery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="scripts/exercise.js"></script>
-    <!--jQuery-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
 </html>
