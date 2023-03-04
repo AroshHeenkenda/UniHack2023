@@ -49,9 +49,15 @@ function pauseTimer() {
 
 function resetTimer() {
 
+    if (!PAUSED){
+        pauseTimer();
+    }
+
     let reset_ref = document.getElementById("resetTimerModal");
     reset_ref.classList.add("show");
-    
+    document.getElementById("hour").value = "00";
+    document.getElementById("minute").value = "00";
+    document.getElementById("second").value = "00";
 }
 
 function closeResetTimer(){
