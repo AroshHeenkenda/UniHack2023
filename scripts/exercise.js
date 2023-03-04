@@ -5,11 +5,14 @@ var modal = document.getElementById("popUp");
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
 // When the user clicks on the button, open the modal
 btn.onclick = function() {
   modal.style.display = "block";
   getExercises()
-  
+  getWeather()
   let item = localStorage.getItem("exercise");
   let exe = JSON.parse(item)
   let rand = getRandomInt(10)
@@ -18,7 +21,7 @@ btn.onclick = function() {
   let gif = JSON.parse(gifData)
   //console.log(gif.data[0].url)
   document.getElementById("exercise").innerHTML = `Name:${exe[rand].name} <br> Type: ${exe[rand].type} <br> Instruction: ${exe[rand].instructions} <br> equipment: ${exe[rand].equipment} <br> difficulty: ${exe[rand].difficulty}`;
-  document.getElementById("giphy-embed").src = gif.data[0].embed_url
+  //document.getElementById("giphy-embed").src =
   //console.log(gif.data[0].embed_url)
 }
 // When the user clicks on <span> (x), close the modal
@@ -48,7 +51,7 @@ function getRandomInt(max) {
   }
 
 function getWeather(){
-    let url = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m&current_weather=true'
+    let url = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,precipitation,rain&daily=precipitation_sum,precipitation_probability_max&current_weather=true&timezone=Australia%2FSydney'
     fetch(url)
     .then((response) => response.json())
     .then((data) => console.log(data));
@@ -57,6 +60,6 @@ function getWeather(){
 function getGIF(searchKey){
     let url = 'http://api.giphy.com/v1/gifs/search'
     let api_key = 'MA7E8FdOXw3t2WTIbZzew06umA59Y8kT'
-    let xhr = $.get(url+'?q='+searchKey+'stretching'+'&api_key='+api_key+'&limit=5')
+    let xhr = $.get(url+'?q='+searchKey+'yoga'+'&api_key='+api_key+'&limit=5')
     xhr.done(function(data) { localStorage.setItem("gifdata",JSON.stringify(data)); })
 }
