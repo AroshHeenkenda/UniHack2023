@@ -38,8 +38,8 @@ li {
 /* NAVBAR MENU */
 .menu {
     display: flex;
-    gap: 1em;
-    font-size: 18px;
+    gap: 0.5em;
+    font-size: 38px;
 }
     
 /* .menu li:hover {

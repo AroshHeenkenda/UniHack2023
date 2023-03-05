@@ -18,7 +18,7 @@ function startTimer() {
     // The amount of time passed increments by one
     if (timeLeft > 0){
         timePassed = timePassed += 1;
-        if (timePassed % (5)==0 && (TIME_LIMIT - timePassed != 0)){
+        if (timePassed % (30*60)==0 && (TIME_LIMIT - timePassed != 0)){
             showNotification();
             new Audio("wrong-answer-129254.mp3").play();
             stretchTime();
