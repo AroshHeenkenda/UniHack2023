@@ -25,6 +25,7 @@ function startTimer() {
         console.log("It works")
         showNotification();
         new Audio("wrong-answer-129254.mp3").play()
+        stretchTime()
         clearInterval(timerInterval);
         pauseTimer();
     }
@@ -125,7 +126,7 @@ function showNotification() {
 };
 
 if (Notification.permission === "granted"){
-    alert("Notifications has been enabled")
+    //alert("Notifications has been enabled")
     //showNotification();
 } else if (Notification.permission !== "denied") {
     Notification.requestPermission().then(permission => {
