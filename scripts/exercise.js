@@ -7,7 +7,7 @@ var btn = document.getElementById("myBtn");
 //Get the button that close the modal
 var con = document.getElementById("closeStretch")
 // When the user clicks on the button, open the modal
-btn.onclick = function() {
+function stretchTime() {
   modal.style.display = "block";
   getExercises()
   let item = localStorage.getItem("exercise");
