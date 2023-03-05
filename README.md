@@ -11,3 +11,9 @@ npm start
 
 ## Website Access
 The website can be accessed from [here](https://aroshheenkenda.github.io/UniHack2023/)
+
+## Tools
+Built using:
+    - [Tomorrow Weather](https://www.tomorrow.io/weather/widget/)
+    - [Places API](https://www.geoapify.com/places-api)
+    - [Github Pages](https://pages.github.com/)
