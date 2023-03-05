@@ -27,6 +27,7 @@ function stretchTime() {
 // When the user clicks on continue button, close the modal
 con.onclick =function closePopUp() {
     modal.style.display = "none";
+    pauseTimer();
 }
 
 
