@@ -68,6 +68,7 @@ weatherBtn.onclick = function() {
 
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'tomorrow-sdk');
+  getTrail()
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -87,3 +88,19 @@ function getWeather(){
     .then(response => console.log(response))
     .catch(err => console.error(err));
 }
+
+function getTrail(){
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '8596aa3249msh21aa2e670d2a2c2p1696dcjsn9da8f093594e',
+      'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
+    }
+  };
+  
+  fetch('https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=35.653221&lon=%-78.459923CREQUIRED%3E&page=1', options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+}
+
