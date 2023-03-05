@@ -90,7 +90,7 @@ li {
 .time_weather{
     display: flex;
     justify-content: space-evenly;
-    padding-top: 50px;
+    padding-top: 10%;
 }
 
 /* Sets the containers height and width */
