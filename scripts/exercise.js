@@ -90,17 +90,17 @@ function getWeather(){
 }
 
 function getTrail(){
-  const options = {
+  var requestOptions = {
     method: 'GET',
-    headers: {
-      'X-RapidAPI-Key': '8596aa3249msh21aa2e670d2a2c2p1696dcjsn9da8f093594e',
-      'X-RapidAPI-Host': 'trailapi-trailapi.p.rapidapi.com'
-    }
   };
-  
-  fetch('https://trailapi-trailapi.p.rapidapi.com/trails/explore/?lat=35.653221&lon=%-78.459923CREQUIRED%3E&page=1', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+  var lat = '145.13480648790716'
+  var lon  = '-37.910776350000006'
+  var apiKey = "70010d7ede7f41b594751cd1c50ebdd7"
+  var api = 'https://api.geoapify.com/v2/places?categories=leisure&filter=circle:'+lat+','+lon+',5000&bias=proximity:'+lat+','+lon+'&limit=20&apiKey='+apiKey
+  fetch(api)
+  .then(response => response.json())
+  .then(result => console.log(result))
+  .catch(error => console.log('error', error));
+
 }
 

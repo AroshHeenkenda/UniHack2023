@@ -331,6 +331,7 @@ li {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    height: 90%;
 }
 /* The Close Button */
 .close {
@@ -346,3 +347,23 @@ li {
     text-decoration: none;
     cursor: pointer;
   }
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+    height: 65vh; 
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+.map{
+    width: 100%;
+    height: 100%;
+}
