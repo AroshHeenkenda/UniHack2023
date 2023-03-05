@@ -128,7 +128,9 @@ function showNotification() {
         body: "Hey! Time for a quick Stretch and posture check!",
         icon: "images/MindfulLogo.png",
         silent: true,
+        
     });
+    notification.onclick = function () {window.parent.parent.focus()};
 };
 
 function showNotificationFinish() {
@@ -137,6 +139,7 @@ function showNotificationFinish() {
         icon: "images/MindfulLogo.png",
         silent: true,
     });
+    notification.onclick = function () {window.parent.parent.focus()};
 };
 
 if (Notification.permission === "granted"){
