@@ -27,7 +27,15 @@
 
         <!-- TIMER DIV -->
         <div id="time_weather" class="time_weather">
-            <div class="timer" id="timer"></div>
+
+            <div id="timer_div">
+                <div class="timer" id="timer"></div>
+                <div id="timer_buttons">
+                    <button class="pause_button" id="pause_button"  onclick="pauseTimer()"></button>
+                    <button class="reset_timer" id="reset_timer" onclick="resetTimer()"> Reset Timer </button>
+                </div>
+            </div>
+
 
             <!--WEATHER WIDGET FROM TOMORROW--> 
             <div class="tomorrow"
@@ -54,12 +62,10 @@
             </div>
         </div>
 
-        <button class="pause_button" id="pause_button"  onclick="pauseTimer()"></button>
-        <button class="reset_timer" id="reset_timer" onclick="resetTimer()"> Reset Timer </button>
-
         </div>
-            <!-- Trigger/Open The Modal -->
-            <button id="myBtn">Open Modal</button>
+            <!-- FOR SOME REASON NEED THIS BUTTON FOR WEATHER TO WORK -->
+            <button id="myBtn"></button>
+
             <!--Pop up-->
                 <div id = "popUp" class = "modal">
                 <!--Pop up content-->
@@ -90,7 +96,7 @@
                 </div>
 
             </div>
-            
+
         </div>
 
     </body>
