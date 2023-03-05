@@ -42,11 +42,11 @@ li {
     font-size: 18px;
 }
     
-.menu li:hover {
+/* .menu li:hover {
     background-color: #4c9e9e;
     border-radius: 5px;
     transition: 0.3s ease;
-}
+} */
     
 .menu li {
     padding: 5px 14px;
