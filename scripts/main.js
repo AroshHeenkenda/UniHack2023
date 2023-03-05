@@ -20,12 +20,18 @@ function startTimer() {
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
     }
+    else{
+        clearInterval(timerInterval);
+        pauseTimer();
+    }
 
     // The time left label is updated
     document.getElementById("timer-label").innerHTML = formatTimeLeft(timeLeft);
   }, 1000);
 
-  if (timeLeft < 0){ clearInterval(timerInterval);}
+  if (timeLeft < 0){ clearInterval(timerInterval);
+    pauseTimer();
+    }
   return
 }
 
@@ -57,7 +63,7 @@ function resetTimer() {
     reset_ref.classList.add("show");
     document.getElementById("hour").value = "00";
     document.getElementById("minute").value = "00";
-    document.getElementById("second").value = "00";
+    document.getElementById("second").value = "01";
 }
 
 function closeResetTimer(){
@@ -68,12 +74,15 @@ function closeResetTimer(){
 
 function confirmResetTimer(){
 
-    let hour = document.getElementById("hour").value;
-    let minute = document.getElementById("minute").value;
-    let second = document.getElementById("second").value;
-
+    let hour = parseInt(document.getElementById("hour").value);
+    let minute = parseInt(document.getElementById("minute").value);
+    let second = parseInt(document.getElementById("second").value);
+    
     TIME_LIMIT = (hour*60*60) + (minute*60) + (second);
-    formatTimeLeft(TIME_LIMIT);
+    timeLeft = TIME_LIMIT;
+    timePassed = 0;
+    console.log(`Time Limit: ${TIME_LIMIT}`)
+    document.getElementById("timer-label").innerHTML = formatTimeLeft(TIME_LIMIT);
     closeResetTimer();
 }
 
