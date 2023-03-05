@@ -120,7 +120,7 @@ timer_ref.innerHTML = `
 function showNotification() {
     const notification = new Notification("New message from Mindful Minutes!", {
         body: "Hey time for a break before your back breaks!",
-        icon: "MindfulLogo.png",
+        icon: "images/MindfulLogo.png",
         silent: true,
     });
 };
@@ -135,3 +135,19 @@ if (Notification.permission === "granted"){
         //showNotification();
     });
 }
+
+function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        alert("Location Blocked, location services will not function")
+    }
+  }
+
+function showPosition(position) {
+    let lat = position.coords.latitude;
+    let long = position.coords.longitude;
+    console.log(lat)
+    console.log(long)
+}
+  
