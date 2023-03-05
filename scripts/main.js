@@ -33,6 +33,7 @@ function startTimer() {
         new Audio("wrong-answer-129254.mp3").play()
         clearInterval(timerInterval);
         pauseTimer();
+        displayEnd();
     }
 
     // The time left label is updated
@@ -99,7 +100,7 @@ function confirmResetTimer(){
 
 //On load
 // Start with an initial value of 20 seconds
-let TIME_LIMIT = 10;
+let TIME_LIMIT = 10800;
 // Initially, no time has passed, but this will count up
 // and subtract from the TIME_LIMIT
 let timePassed = 0;

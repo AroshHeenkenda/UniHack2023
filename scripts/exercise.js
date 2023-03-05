@@ -52,7 +52,7 @@ var weatherModal = document.getElementById("weatherPopUp");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 // When the user clicks on the button, open the modal
-weatherBtn.onclick = function() {
+function displayEnd() {
   weatherModal.style.display = "block";
   //function to create weather widge
   (function(d, s, id) {
@@ -106,10 +106,26 @@ function getTrail(){
   .then(response => response.json())
   .then(result =>
 
-     {
+    {
       console.log(result)
       document.getElementById("mapApi").src = 'https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=600&height=400&center=lonlat:'+result.features[rand].properties.lon+','+result.features[rand].properties.lat+'&zoom=14&marker=lonlat:'+result.features[rand].properties.lon+','+result.features[rand].properties.lat+';color:%23ff0000;size:medium&apiKey='+apiKey,
-     document.getElementById("placeSuggestion").innerHTML = result.features[rand].properties.address_line1+result.features[rand].properties.address_line2}
+      document.getElementById("placeSuggestion").innerHTML = result.features[rand].properties.address_line1+result.features[rand].properties.address_line2;
+
+      let refText = `Here's some places to go and get active! <br>`;
+
+
+      
+      for (let i=0; i < result.features.length; i++){
+
+        if (result.features[i].properties["name"]){
+          refText += `- ${result.features[i].properties["name"]} <br>`;
+        }
+
+      }
+      document.getElementById("placeList").innerHTML = refText;
+      
+    }
+    
     )
   .catch(error => console.log('error', error));
 }
