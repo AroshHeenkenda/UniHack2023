@@ -160,10 +160,13 @@ li {
     border-color: transparent transparent transparent #404040;
 }
 
-.timer.pause_button{
 
-    justify-content: center;
+.timer_buttons{
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 25px;
 }
+
 
 
 
@@ -209,6 +212,11 @@ li {
 
 
 /* RESET TIMER MODAL */
+.reset_timer{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .resetTimerModal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
