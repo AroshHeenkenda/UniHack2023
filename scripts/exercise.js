@@ -42,13 +42,6 @@ function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
-//fetch weather detail from open meteo api
-function getWeather(){
-    let url = 'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&hourly=temperature_2m,precipitation,rain&daily=precipitation_sum,precipitation_probability_max&current_weather=true&timezone=Australia%2FSydney'
-    fetch(url)
-    .then((response) => response.json())
-    .then((data) => console.log(data));
-}
 
 /*-----------Weather pop up--------------------*/
 //Get button that opens the weather pop up
@@ -80,4 +73,17 @@ weatherBtn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   weatherModal.style.display = "none";
+}
+//get weather data from tomorrow
+function getWeather(){
+  var lat = '42.3478'
+  var lon  = '-71.0466'
+  var apiKey = "TbYKTzaxNM109CxIMPZFkyiLMrdoysMY"
+  //get weather in data
+  const options = {method: 'GET', headers: {accept: 'application/json'}};
+  var api = 'https://api.tomorrow.io/v4/weather/realtime?location='+lat+','+lon+ '&apikey='+ apiKey
+  fetch(api, options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
 }
