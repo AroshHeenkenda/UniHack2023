@@ -18,14 +18,19 @@ function startTimer() {
     // The amount of time passed increments by one
     if (timeLeft > 0){
         timePassed = timePassed += 1;
+        if (timePassed % (5)==0 && (TIME_LIMIT - timePassed != 0)){
+            showNotification();
+            new Audio("wrong-answer-129254.mp3").play();
+            stretchTime();
+            pauseTimer();
+        }
         timeLeft = TIME_LIMIT - timePassed;
 
-    }
+    } 
     else{
         console.log("It works")
-        showNotification();
+        showNotificationFinish();
         new Audio("wrong-answer-129254.mp3").play()
-        stretchTime()
         clearInterval(timerInterval);
         pauseTimer();
     }
@@ -55,6 +60,7 @@ function pauseTimer() {
         clearInterval(timerInterval);
         pause_ref.classList.add("paused");
     }
+    console.log(PAUSED)
 }
 
 
@@ -119,10 +125,21 @@ timer_ref.innerHTML = `
 
 function showNotification() {
     const notification = new Notification("New message from Mindful Minutes!", {
-        body: "Hey time for a break before your back breaks!",
+        body: "Hey! Time for a quick Stretch and posture check!",
+        icon: "images/MindfulLogo.png",
+        silent: true,
+        
+    });
+    notification.onclick = function () {window.parent.parent.focus()};
+};
+
+function showNotificationFinish() {
+    const notification = new Notification("New message from Mindful Minutes!", {
+        body: "Great work sesh! Time to give the mind a break!",
         icon: "images/MindfulLogo.png",
         silent: true,
     });
+    notification.onclick = function () {window.parent.parent.focus()};
 };
 
 if (Notification.permission === "granted"){
