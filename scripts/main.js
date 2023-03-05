@@ -63,7 +63,7 @@ function resetTimer() {
     reset_ref.classList.add("show");
     document.getElementById("hour").value = "00";
     document.getElementById("minute").value = "00";
-    document.getElementById("second").value = "01";
+    document.getElementById("second").value = "00";
 }
 
 function closeResetTimer(){
