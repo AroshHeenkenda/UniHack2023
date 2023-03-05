@@ -68,7 +68,7 @@ weatherBtn.onclick = function() {
 
     fjs.parentNode.insertBefore(js, fjs);
   })(document, 'script', 'tomorrow-sdk');
-  getTrail()
+  getTrail('leisure')
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -76,31 +76,40 @@ span.onclick = function() {
   weatherModal.style.display = "none";
 }
 //get weather data from tomorrow
-function getWeather(){
-  var lat = '42.3478'
-  var lon  = '-71.0466'
+function getWeather(lat, lon){
   var apiKey = "TbYKTzaxNM109CxIMPZFkyiLMrdoysMY"
   //get weather in data
   const options = {method: 'GET', headers: {accept: 'application/json'}};
   var api = 'https://api.tomorrow.io/v4/weather/realtime?location='+lat+','+lon+ '&apikey='+ apiKey
   fetch(api, options)
     .then(response => response.json())
-    .then(response => console.log(response))
+    .then(response => 
+        console.log(response))
     .catch(err => console.error(err));
 }
 
+let lat1 = localStorage.getItem("lat");
+let lat = JSON.parse(lat1)
+let lon1 = localStorage.getItem("long");
+let lon = JSON.parse(lon1)
+//getWeather(lat, lon)
 function getTrail(){
   var requestOptions = {
     method: 'GET',
   };
-  var lat = '145.13480648790716'
-  var lon  = '-37.910776350000006'
   var apiKey = "70010d7ede7f41b594751cd1c50ebdd7"
-  var api = 'https://api.geoapify.com/v2/places?categories=leisure&filter=circle:'+lat+','+lon+',5000&bias=proximity:'+lat+','+lon+'&limit=20&apiKey='+apiKey
+  var api = 'https://api.geoapify.com/v2/places?categories=leisure&filter=circle:'+lon+','+lat+',5000&bias=proximity:'+lon+','+lat+'&limit=20&apiKey='+apiKey
+  console.log(api)
+  let rand = getRandomInt(20)
   fetch(api)
   .then(response => response.json())
-  .then(result => console.log(result))
-  .catch(error => console.log('error', error));
+  .then(result =>
 
+     {
+      console.log(result)
+      document.getElementById("mapApi").src = 'https://maps.geoapify.com/v1/staticmap?style=osm-carto&width=600&height=400&center=lonlat:'+result.features[rand].properties.lon+','+result.features[rand].properties.lat+'&zoom=14&marker=lonlat:'+result.features[rand].properties.lon+','+result.features[rand].properties.lat+';color:%23ff0000;size:medium&apiKey='+apiKey,
+     document.getElementById("placeSuggestion").innerHTML = result.features[rand].properties.address_line1+result.features[rand].properties.address_line2}
+    )
+  .catch(error => console.log('error', error));
 }
 
