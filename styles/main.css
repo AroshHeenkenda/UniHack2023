@@ -213,8 +213,17 @@ li {
 
 /* RESET TIMER MODAL */
 .reset_timer{
-    padding-left: 10px;
-    padding-right: 10px;
+    background-color: transparent;
+    color: lightcoral;
+    padding: 10px 30px;
+    border-radius: 5px;
+    border-color: lightcoral;
+    text-decoration: none;
+}
+
+.reset_timer:hover{
+    cursor: pointer;
+    background-color: #f0bbbb;
 }
 
 .resetTimerModal {
