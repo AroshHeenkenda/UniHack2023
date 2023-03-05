@@ -10,4 +10,4 @@ npm start
 ```
 
 ## Website Access
-The website can be accessed from this [here](https://aroshheenkenda.github.io/UniHack2023/)
+The website can be accessed from [here](https://aroshheenkenda.github.io/UniHack2023/)
