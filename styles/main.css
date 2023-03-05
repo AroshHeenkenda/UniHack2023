@@ -89,7 +89,8 @@ li {
 /* TIMER */
 .time_weather{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
+    padding-top: 50px;
 }
 
 /* Sets the containers height and width */
