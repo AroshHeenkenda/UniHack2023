@@ -87,6 +87,11 @@ li {
 
 
 /* TIMER */
+.time_weather{
+    display: flex;
+    justify-content: center;
+}
+
 /* Sets the containers height and width */
 .timer {
     position: relative;
