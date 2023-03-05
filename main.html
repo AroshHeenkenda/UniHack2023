@@ -64,8 +64,11 @@
             <div id="resetTimerModal" class="resetTimerModal">
 
                 <div class="resetTimerModalContent">
-                    <span class="resetTimerClose">&times;</span>
-                    <p>Some text in the Modal..</p>
+                    <span class="resetTimerClose" onclick="closeResetTimer()">&times;</span>
+                    <input id="hour" type="number" value="00" min="00">
+                    <input id="minute" type="number" value="00" min="00" max="59">
+                    <input id="second" type="number" value="00" min="01" max="59">
+                    <button class="resetConfirm" onclick="confirmResetTimer()">Confirm</button>
                 </div>
 
             </div>
