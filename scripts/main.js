@@ -19,8 +19,12 @@ function startTimer() {
     if (timeLeft > 0){
         timePassed = timePassed += 1;
         timeLeft = TIME_LIMIT - timePassed;
+
     }
     else{
+        console.log("It works")
+        showNotification();
+        new Audio("wrong-answer-129254.mp3").play()
         clearInterval(timerInterval);
         pauseTimer();
     }
@@ -111,3 +115,22 @@ timer_ref.innerHTML = `
 
     </div>
 `;
+
+function showNotification() {
+    const notification = new Notification("New message from Mindful Minutes!", {
+        body: "Hey time for a break before your back breaks!",
+        icon: "MindfulLogo.png",
+        silent: true,
+    });
+};
+
+if (Notification.permission === "granted"){
+    alert("Notifications has been enabled")
+    //showNotification();
+} else if (Notification.permission !== "denied") {
+    Notification.requestPermission().then(permission => {
+        console.log(permission)
+        console.log("works 2")
+        //showNotification();
+    });
+}
