@@ -164,7 +164,8 @@ function getLocation() {
 function showPosition(position) {
     let lat = position.coords.latitude;
     let long = position.coords.longitude;
-    console.log(lat)
-    console.log(long)
+    localStorage.setItem("lat",JSON.stringify(lat));
+    localStorage.setItem("long",JSON.stringify(long));
 }
   
+getLocation()
